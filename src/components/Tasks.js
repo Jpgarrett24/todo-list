@@ -4,14 +4,17 @@ const Tasks = (props) => {
     const { value, task, tasks, setTasks } = props;
 
     const checkbox = (event) => {
-        // tasks[value].completed ?
-        //     setTasks(tasks.splice(value, tasks.length, { task: task.task, completed: false })) :
-        //     setTasks(tasks.splice(value, tasks.length, { task: task.task, completed: true }))
-        tasks[value].completed ?
-            tasks[value].completed = false :
-            tasks[value].completed = true;
-        setTasks(tasks);
-        console.log(tasks);
+        setTasks(tasks.map((item, idx) => {
+            if (idx == value) {
+                item.completed ?
+                    item.completed = false :
+                    item.completed = true
+                return item;
+            }
+            else {
+                return item;
+            }
+        }))
     };
 
     const deleteTask = (event) => {

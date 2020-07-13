@@ -10,7 +10,7 @@ function App() {
       <Form tasks={tasks} setTasks={setTasks}></Form>
       <ul>
         {tasks.map((task, idx) => {
-          return (<li><Tasks key={idx} value={idx} task={task} tasks={tasks} setTasks={setTasks}></Tasks></li>);
+          return (<li key={idx}><Tasks value={idx} task={task} tasks={tasks} setTasks={setTasks}></Tasks></li>);
         })}
       </ul>
     </>
